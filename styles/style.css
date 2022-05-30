@@ -1,4 +1,142 @@
-body {
-  background-color: red;
+* {
+  margin: 0%;
+  padding: 0%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+html {
+  font-size: 10px;
+}
+
+.main {
+  width: 95%;
+  margin: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #fafafa;
+  border-radius: 15px;
+}
+
+.main .header {
+  font-size: 3rem;
+  letter-spacing: 0.2rem;
+  text-align: center;
+  text-transform: uppercase;
+  background-image: -webkit-gradient(linear, left top, right top, from(#f59a9a), to(#91f5c8));
+  background-image: linear-gradient(left, #f59a9a, #91f5c8);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.main .main-keypad {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .main-keypad .result-screen {
+  height: 30vh;
+  width: 99%;
+  font-size: 4rem;
+  font-weight: 600;
+  color: #2d323a;
+}
+
+@media only screen and (min-width: 375px) {
+  .main .main-keypad .result-screen {
+    width: 86%;
+  }
+}
+
+@media only screen and (min-width: 760px) {
+  .main .main-keypad .result-screen {
+    width: 42%;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  .main .main-keypad .result-screen {
+    width: 31.5%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .main .main-keypad .result-screen {
+    width: 22.4%;
+  }
+}
+
+.main .main-keypad .result-screen p {
+  text-align: right;
+  padding-top: 1rem;
+  padding-right: 1rem;
+}
+
+.main .main-keypad .keypad {
+  padding: 1.7rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (6rem)[4];
+      grid-template-columns: repeat(4, 6rem);
+  -ms-grid-rows: (6rem)[6];
+      grid-template-rows: repeat(6, 6rem);
+  gap: 1rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main .main-keypad .keypad .keys {
+  border-radius: 30%;
+  text-align: center;
+  padding-top: 2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: #e9f0f4;
+  color: #2f343c;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.main .main-keypad .keypad .keys:hover {
+  cursor: pointer;
+  padding-top: 1.5rem;
+  font-size: 2rem;
+  color: red;
+  background-color: #f8eced;
+  -webkit-box-shadow: 1px 1px 5px #fae0e0;
+          box-shadow: 1px 1px 5px #fae0e0;
+}
+
+.main .main-keypad .keypad .keys:nth-child(8), .main .main-keypad .keypad .keys:nth-child(12), .main .main-keypad .keypad .keys:nth-child(16), .main .main-keypad .keypad .keys:nth-child(20) {
+  color: white;
+  background-color: #ff9500;
+}
+
+.main .main-keypad .keypad .keys:nth-child(8):hover, .main .main-keypad .keypad .keys:nth-child(12):hover, .main .main-keypad .keypad .keys:nth-child(16):hover, .main .main-keypad .keypad .keys:nth-child(20):hover {
+  cursor: pointer;
+  color: #ff9500;
+  background-color: white;
+}
+
+.main .main-keypad .keypad .keys:last-child {
+  color: white;
+  background-color: #2ec973;
+}
+
+.main .main-keypad .keypad .keys:last-child:hover {
+  cursor: pointer;
+  color: #2ec973;
+  background-color: white;
 }
 /*# sourceMappingURL=style.css.map */
