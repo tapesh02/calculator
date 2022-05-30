@@ -2,3 +2,110 @@
 @import "breakpoints";
 @import "mixin";
 @import "variables";
+
+.main {
+    width: 95%;
+    margin: auto;
+    box-sizing: border-box;
+    background-color: rgb(250, 250, 250);
+    border-radius: 15px;
+
+    .header {
+        font-size: $headerFont;
+        letter-spacing: 0.2rem;
+        text-align: center;
+        text-transform: uppercase;
+        background-image: linear-gradient(left, rgb(245, 154, 154), rgb(145, 245, 200));
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+    }
+
+    .main-keypad {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+
+        .result-screen {
+            height: 30vh;
+            width: 99%;
+            font-size: $subHeaderFont + 1.8;
+            font-weight: 600;
+            // color: gainsboro; use this for  highlighted text
+            color: #2d323a;
+
+            @include large-mobile {
+                width: 86%;
+            }
+            @include tablet {
+                width: 42%;
+            }
+            @include small-laptop {
+                width: 31.5%;
+            }
+
+            @include large-laptop {
+                width: 22.4%;
+            }
+
+            p {
+                text-align: right;
+                padding-top: 1rem;
+                padding-right: 1rem;
+            }
+        }
+
+        .keypad {
+            padding: 1.7rem;
+            display: grid;
+            grid-template-columns: repeat(4, 6rem);
+            grid-template-rows: repeat(6, 6rem);
+            gap: 1rem;
+            justify-content: center;
+
+            .keys {
+                border-radius: 30%;
+                text-align: center;
+                padding-top: 2rem;
+                font-size: $font-size;
+                font-weight: bold;
+                background-color: #e9f0f4;
+                color: #2f343c;
+                transition: all 0.2s ease-in;
+
+                &:hover {
+                    cursor: pointer;
+                    padding-top: 1.5rem;
+                    font-size: $font-size + 0.5;
+                    color: red;
+                    background-color: #f8eced;
+                    box-shadow: 1px 1px 5px rgb(250, 224, 224);
+                }
+                &:nth-child(8),
+                &:nth-child(12),
+                &:nth-child(16),
+                &:nth-child(20) {
+                    color: white;
+                    background-color: #ff9500;
+
+                    &:hover {
+                        cursor: pointer;
+                        color: #ff9500;
+                        background-color: white;
+                    }
+                }
+
+                &:last-child {
+                    color: white;
+                    background-color: #2ec973;
+                    &:hover {
+                        cursor: pointer;
+                        color: #2ec973;
+                        background-color: white;
+                    }
+                }
+            }
+        }
+    }
+}
