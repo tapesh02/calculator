@@ -1,8 +1,9 @@
 {
     "version": 3,
-    "mappings": "AAIA,AAAA,IAAI,CAAC;EACD,gBAAgB,EAAE,GAAG;CACxB",
+    "mappings": "ACAA,AAAA,CAAC,CAAC;EACE,MAAM,EAAE,EAAE;EACV,OAAO,EAAE,EAAE;CACd;;AACD,AAAA,IAAI,CAAC;EACD,SAAS,EAAE,IAAI;CAClB",
     "sources": [
         "style.scss",
+        "_defaults.scss",
         "_breakpoints.scss",
         "_mixin.scss",
         "_variables.scss"
