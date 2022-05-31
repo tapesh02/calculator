@@ -4,11 +4,18 @@
 @import "variables";
 
 .main {
-    width: 95%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(250, 250, 250);
     margin: auto;
     box-sizing: border-box;
-    background-color: rgb(250, 250, 250);
     border-radius: 15px;
+
+    @include desktop {
+        height: 100vh;
+        align-content: center;
+        justify-content: center;
+    }
 
     .header {
         font-size: $headerFont;
@@ -19,6 +26,10 @@
         color: transparent;
         background-clip: text;
         -webkit-background-clip: text;
+
+        @include desktop {
+            margin-bottom: 2em;
+        }
     }
 
     .main-keypad {
@@ -26,9 +37,10 @@
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
+        // background-color: #2d323a; use for dark theme
 
         .result-screen {
-            height: 30vh;
+            height: 25vh;
             width: 99%;
             font-size: $subHeaderFont + 1.8;
             font-weight: 600;
@@ -48,7 +60,10 @@
             @include large-laptop {
                 width: 22.4%;
             }
-
+            @include desktop {
+                width: 15%;
+                height: 30vh;
+            }
             p {
                 text-align: right;
                 padding-top: 1rem;
@@ -59,52 +74,18 @@
         .keypad {
             padding: 1.7rem;
             display: grid;
-            grid-template-columns: repeat(4, 6rem);
-            grid-template-rows: repeat(6, 6rem);
+            grid-template-columns: repeat(4, 5rem);
+            grid-template-rows: repeat(6, 5rem);
             gap: 1rem;
             justify-content: center;
 
+            @include desktop {
+                grid-template-columns: repeat(4, 6rem);
+                grid-template-rows: repeat(6, 6rem);
+            }
+
             .keys {
-                border-radius: 30%;
-                text-align: center;
-                padding-top: 2rem;
-                font-size: $font-size;
-                font-weight: bold;
-                background-color: #e9f0f4;
-                color: #2f343c;
-                transition: all 0.2s ease-in;
-
-                &:hover {
-                    cursor: pointer;
-                    padding-top: 1.5rem;
-                    font-size: $font-size + 0.5;
-                    color: red;
-                    background-color: #f8eced;
-                    box-shadow: 1px 1px 5px rgb(250, 224, 224);
-                }
-                &:nth-child(8),
-                &:nth-child(12),
-                &:nth-child(16),
-                &:nth-child(20) {
-                    color: white;
-                    background-color: #ff9500;
-
-                    &:hover {
-                        cursor: pointer;
-                        color: #ff9500;
-                        background-color: white;
-                    }
-                }
-
-                &:last-child {
-                    color: white;
-                    background-color: #2ec973;
-                    &:hover {
-                        cursor: pointer;
-                        color: #2ec973;
-                        background-color: white;
-                    }
-                }
+                @include keypad-btn;
             }
         }
     }

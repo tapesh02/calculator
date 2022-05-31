@@ -5,7 +5,6 @@ $breakpoints: (
     "small-laptop": 960px,
     "large-laptop": 1200px,
     "desktop": 1400px,
-    "HDdevice": 2500px,
 );
 
 @mixin small-mobile {
@@ -39,13 +38,7 @@ $breakpoints: (
 }
 
 @mixin desktop {
-    @media only screena and (min-width: map-get($breakpoints, "desktop")) {
-        @content;
-    }
-}
-
-@mixin HDdevice {
-    @media only screen and (min-width: map-get($breakpoints , "HDdesktop")) {
+    @media only screen and (min-width: map-get($breakpoints, "desktop")) {
         @content;
     }
 }

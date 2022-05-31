@@ -9,12 +9,29 @@ html {
 }
 
 .main {
-  width: 95%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #fafafa;
   margin: auto;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background-color: #fafafa;
   border-radius: 15px;
+}
+
+@media only screen and (min-width: 1400px) {
+  .main {
+    height: 100vh;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 .main .header {
@@ -27,6 +44,12 @@ html {
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
+}
+
+@media only screen and (min-width: 1400px) {
+  .main .header {
+    margin-bottom: 2em;
+  }
 }
 
 .main .main-keypad {
@@ -45,7 +68,7 @@ html {
 }
 
 .main .main-keypad .result-screen {
-  height: 30vh;
+  height: 25vh;
   width: 99%;
   font-size: 4rem;
   font-weight: 600;
@@ -76,6 +99,13 @@ html {
   }
 }
 
+@media only screen and (min-width: 1400px) {
+  .main .main-keypad .result-screen {
+    width: 15%;
+    height: 30vh;
+  }
+}
+
 .main .main-keypad .result-screen p {
   text-align: right;
   padding-top: 1rem;
@@ -86,36 +116,51 @@ html {
   padding: 1.7rem;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (6rem)[4];
-      grid-template-columns: repeat(4, 6rem);
-  -ms-grid-rows: (6rem)[6];
-      grid-template-rows: repeat(6, 6rem);
+  -ms-grid-columns: (5rem)[4];
+      grid-template-columns: repeat(4, 5rem);
+  -ms-grid-rows: (5rem)[6];
+      grid-template-rows: repeat(6, 5rem);
   gap: 1rem;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
+@media only screen and (min-width: 1400px) {
+  .main .main-keypad .keypad {
+    -ms-grid-columns: (6rem)[4];
+        grid-template-columns: repeat(4, 6rem);
+    -ms-grid-rows: (6rem)[6];
+        grid-template-rows: repeat(6, 6rem);
+  }
+}
+
 .main .main-keypad .keypad .keys {
   border-radius: 30%;
   text-align: center;
-  padding-top: 2rem;
+  padding-top: 1.5rem;
   font-size: 1.5rem;
   font-weight: bold;
   background-color: #e9f0f4;
   color: #2f343c;
-  -webkit-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
 }
 
 .main .main-keypad .keypad .keys:hover {
   cursor: pointer;
-  padding-top: 1.5rem;
+  padding-top: 1.2rem;
   font-size: 2rem;
   color: red;
   background-color: #f8eced;
   -webkit-box-shadow: 1px 1px 5px #fae0e0;
           box-shadow: 1px 1px 5px #fae0e0;
+}
+
+@media only screen and (min-width: 1400px) {
+  .main .main-keypad .keypad .keys:hover {
+    padding-top: 1.5rem;
+  }
 }
 
 .main .main-keypad .keypad .keys:nth-child(8), .main .main-keypad .keypad .keys:nth-child(12), .main .main-keypad .keypad .keys:nth-child(16), .main .main-keypad .keypad .keys:nth-child(20) {
