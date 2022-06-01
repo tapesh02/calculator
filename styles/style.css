@@ -70,9 +70,15 @@ html {
 .main .main-keypad .result-screen {
   height: 25vh;
   width: 99%;
-  font-size: 4rem;
-  font-weight: 600;
-  color: #2d323a;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media only screen and (min-width: 375px) {
@@ -106,7 +112,15 @@ html {
   }
 }
 
-.main .main-keypad .result-screen p {
+.main .main-keypad .result-screen input {
+  font-size: 4rem;
+  color: #2d323a;
+  font-weight: 600;
+  width: 90%;
+  height: 22vh;
+  border-radius: 5px;
+  background: transparent;
+  border: none;
   text-align: right;
   padding-top: 1rem;
   padding-right: 1rem;
