@@ -42,10 +42,11 @@
         .result-screen {
             height: 25vh;
             width: 99%;
-            font-size: $subHeaderFont + 1.8;
-            font-weight: 600;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
             // color: gainsboro; use this for  highlighted text
-            color: #2d323a;
 
             @include large-mobile {
                 width: 86%;
@@ -64,7 +65,15 @@
                 width: 15%;
                 height: 30vh;
             }
-            p {
+            input {
+                font-size: $subHeaderFont + 1.8;
+                color: #2d323a;
+                font-weight: 600;
+                width: 90%;
+                height: 22vh;
+                border-radius: 5px;
+                background: transparent;
+                border: none;
                 text-align: right;
                 padding-top: 1rem;
                 padding-right: 1rem;
